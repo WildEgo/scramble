@@ -63,6 +63,11 @@ return [
      */
     'servers' => null,
 
+    /**
+     * Automatic controller tagging
+     */
+    'disable_controller_tag' => false,
+
     'middleware' => [
         'web',
         RestrictedDocsAccess::class,

@@ -118,6 +118,13 @@ class Operation
         return $this;
     }
 
+    public function addTags(array $tags)
+    {
+        $this->tags = array_merge($this->tags, $tags);
+
+        return $this;
+    }
+
     public function addParameters(array $parameters)
     {
         $this->parameters = array_merge($this->parameters, $parameters);

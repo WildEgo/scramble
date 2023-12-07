@@ -75,6 +75,12 @@ class RequestEssentialsExtension extends OperationExtension
                     ->unique()
                     ->toArray()
             );
+
+            if (! config('scramble.disable_controller_tag', false)) {
+                $operation->addTags([
+                    Str::of(class_basename($routeInfo->className()))->replace('Controller', '')->toString(),
+                ]);
+            }
         }
     }
 
